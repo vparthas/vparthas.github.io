@@ -1,1 +1,69 @@
-<!DOCTYPE html><html lang=en><meta charset=UTF-8><title>Varun Parthasarathy's Portfolio</title><link href=stylesheets/index.css rel=stylesheet><link href=http://yui.yahooapis.com/pure/0.6.0/pure-min.css rel=stylesheet><link href=stylesheets/animate.css rel=stylesheet><div class="animated fadeInRight pure-menu pure-menu-fixed pure-menu-horizontal"id=navBar><ul class=pure-menu-list><li class="pure-menu-item pure-menu-selected"><a class=pure-menu-link id=aboutLink>About</a><li class="pure-menu-item pure-menu-allow-hover pure-menu-has-children"><a class=pure-menu-link href=# id=menuLink2>Projects</a><ul class=pure-menu-children><li class=pure-menu-item><a class=pure-menu-link href=http://www.varunp.com/ >varunp.com</a><li class=pure-menu-item><a class=pure-menu-link href=https://github.com/vparthas/Scientific-Calculator target=_blank>Scientific Calculator</a><li class=pure-menu-item><a class="pure-menu-link not-active">More coming soon!</a></ul><li class="pure-menu-item pure-menu-allow-hover pure-menu-has-children"><a class=pure-menu-link href=# id=menuLink1>Contact</a><ul class=pure-menu-children><li class=pure-menu-item><a class=pure-menu-link href=https://www.linkedin.com/in/vparthas target=_blank>LinkedIn</a><li class=pure-menu-item><a class=pure-menu-link href=mailto:varun@parthasarathy.org>Email</a><li class=pure-menu-item><a class=pure-menu-link href=https://github.com/vparthas target=_blank>GitHub</a></ul><li class="pure-menu-item pure-menu-selected"><a class=pure-menu-link href=img/pdf/Varun_Parthasarathy_Resume.pdf target=_blank>Résumé</a></ul></div><div class=splash-container><div class=splash><p class="animated fadeInLeft"id=mainHeading>Hi. I'm Varun Parthasarathy.<p class="animated fadeInRight"id=subHeading>I write code sometimes.</div><canvas id=demo-canvas></canvas></div><div class=content-wrapper><div class="content pure-g"id=aboutDiv><div class=pure-u-1-1><h1>About Me</h1><p><b>Short Version:</b><br>I'm 18, I study computer science and statistics at UIUC, and I like to create cool stuff (and learn while I do it).<p><b>Long Version:</b><br>I am a freshman at the University of Illinois at Urbana-Champaign majoring in Statistics & Computer Science. I have a passion for computer science, fueled by my love of creating and problem-solving. I am an experienced programmer proficient in numerous languages with professional experience in the field of computer science, and I firmly believe that in order to further my understanding, I must apply what I have learned both in and out of the classroom. As such, I have created this website in order to display and document my experiences as I learn. Enjoy!</div></div></div><script src=js/rAF.js></script><script src=js/header.js></script><script src=https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js></script><script src=js/scroll.js></script>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<title>Varun Parthasarathy's Portfolio</title>
+<link href=css/index.css rel=stylesheet type="text/css"/>
+<link rel=stylesheet href=http://yui.yahooapis.com/pure/0.6.0/pure-min.css>
+<link rel=stylesheet href=stylesheets/animate.css>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel=stylesheet type=text/css>
+</head>
+<body>
+<div id=navBar class="pure-menu pure-menu-horizontal pure-menu-fixed animated fadeInRight">
+<ul class=pure-menu-list>
+<li class="pure-menu-item pure-menu-selected"><a id=projectsLink class=pure-menu-link>Projects</a></li>
+<li class="pure-menu-item pure-menu-selected"><a id=aboutLink class=pure-menu-link>About</a></li>
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<a href=# id=menuLink1 class=pure-menu-link>Contact</a>
+<ul class=pure-menu-children>
+<li class=pure-menu-item><a href=https://www.linkedin.com/in/vparthas target=_blank class=pure-menu-link>LinkedIn</a></li>
+<li class=pure-menu-item><a href=mailto:varun@parthasarathy.org class=pure-menu-link>Email</a></li>
+<li class=pure-menu-item><a href=https://github.com/vparthas target=_blank class=pure-menu-link>GitHub</a></li>
+</ul>
+</li>
+<li class="pure-menu-item pure-menu-selected">
+<a href=img/pdf/Varun_Parthasarathy_Resume.pdf target=_blank class=pure-menu-link>R&#233;sum&#233;</a>
+</li>
+</ul>
+</div>
+<div class=splash-container>
+<div class=splash>
+<p class="animated fadeInLeft" id=mainHeading>Hi. I'm Varun Parthasarathy.</p>
+<p class="animated fadeInRight" id=subHeading>I write code sometimes.</p>
+</div>
+<canvas id=demo-canvas></canvas>
+</div>
+<div class=content-wrapper id=contentTop>
+<div id=contentDiv class="content pure-g">
+<div class=pure-u-1-1 id=projectsDiv>
+<h1>Projects</h1>
+</div>
+<div class=pure-img>
+<a href=https://www.amazon.com/Varun-Parthasarathy-LockPad/dp/B01JC4CBKQ target=_blank>
+<img class=projectImage src=img/projects/lockpad.png alt="LockPad"/>
+</a>
+</div>
+<div class=pure-img>
+<a href=https://github.com/vparthas/Scientific-Calculator target=_blank>
+<img class=projectImage src=img/projects/scicalc2.png alt="Scientific Calculator"/>
+</a>
+</div>
+<div class=pure-img>
+<a href=https://github.com/vparthas/Portfolio-Website target=_blank>
+<img class=projectImage src=img/projects/varunpcom2.png alt="varunp.com source"/>
+</a>
+</div>
+<div class="pure-u-1-1 spacer"></div>
+<div class=pure-u-1-1 id=aboutDiv>
+<h1>About Me</h1>
+<img src=img/about_cropped.png id=aboutImage alt=Me>
+<p><strong>Hey there!</strong> I am currently a student at the University of Illinois at Urbana-Champaign pursuing my B.S. in Computer Science & Statistics. I grew up (and still reside) in the heart of Californiaâ€™s Silicon Valley, where I took an interest in computer science from a young age. I have always been able to quickly adapt to new challenges, and I love creating innovative solutions to problems. In addition, I am always interested in new and interesting technologies, and I believe change to be essential to innovation. I am particularly interested in machine learning, which is why I chose to study statistics in addition to computer science. If you would like to contact me, my information is available at the top of this page. All inquiries welcome- especially if youâ€™re Nigerian royalty.</p>
+</div>
+</div>
+</div>
+<script src=js/rAF.js></script>
+<script src=js/header.js></script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js></script>
+<script src=js/scroll.js></script>
+</body>
+</html>
