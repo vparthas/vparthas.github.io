@@ -1,1 +1,154 @@
-!function(){function t(){h=window.innerWidth,d=window.innerHeight,m=h>d?d:h,f={x:0,y:d},l=document.getElementById("demo-canvas"),l.width=h,l.height=d,s=l.getContext("2d"),u=[];for(var t=h*d/15e3,n=0;t>n;n++){var e=new r(Math.random()*h,Math.random()*d,360*Math.random(),1e4*Math.random()+1e3);u.push(e)}}function n(){i()}function e(){window.addEventListener("scroll",a),window.addEventListener("resize",o)}function a(){v=document.body.scrollTop>d?!1:!0}function o(){h=window.innerWidth,d=window.innerHeight,m=h>d?d:h,c.style.height=d+"px",l.width=h,l.height=d}function i(){if(v){s.clearRect(0,0,h,d),s.beginPath(),s.arc(w,g,3,0,2*Math.PI,!1),s.fillStyle="rgba(67,124,144,255)",s.fill();for(var t in u){u[t].draw();var n=u[t];u[t]=n.count>0?new r(n.x1+.1*Math.cos(n.theta),n.y1+.1*Math.sin(n.theta),n.theta,n.count-1):new r(Math.random()*h,Math.random()*d,360*Math.random(),1e4*Math.random()+1e3)}}requestAnimationFrame(i)}function r(t,n,e,a){var o=this;!function(){o.x1=t,o.y1=n,o.theta=e,o.count=a}(),this.draw=function(){for(var e=0;e<u.length;e++){var a=u[e].x1,o=u[e].y1,i=Math.sqrt((t-a)*(t-a)+(n-o)*(n-o));200>i&&(s.beginPath(),s.moveTo(t,n),s.lineTo(a,o),s.strokeStyle="rgba(67,124,144,255)",s.stroke())}s.beginPath(),s.arc(t,n,3,0,2*Math.PI,!1),s.fillStyle="rgba(67,124,144,255)",s.fill(),Math.sqrt((t-w)*(t-w)+(n-g)*(n-g))<200&&(s.beginPath(),s.moveTo(t,n),s.lineTo(w,g),s.strokeStyle="rgba(67,124,144,255)",s.stroke())}}var h,d,c,l,s,u,f,m,w,g,v=!0;t(),e(),n(),document.onmousemove=function(t){w=t.pageX,g=t.pageY}}();
+(function() {
+
+    var width, height, largeHeader, canvas, ctx, points, target, size, animateHeader = true;
+    var cursorX, cursorY;
+
+    // Main
+    initHeader();
+    addListeners();
+    initAnimation();
+
+    function initHeader() {
+
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        size = width > height ? height : width;
+        target = {x: 0, y: height};
+
+        canvas = document.getElementById('demo-canvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+
+        // create particles
+        points = [];
+        var dots = (width * height) / 20000;
+        for(var i = 0; i < dots; i++) {
+            var l;
+            do {
+                l = new Dot(Math.random()*width, Math.random() * height, Math.random() * 360, Math.random() * 10000 + 1000);
+            } while(withinBounds(l));
+
+            points.push(l);
+        }
+    }
+
+    function initAnimation() {
+        animate();
+    }
+
+    // Event handling
+    function addListeners() {
+        window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('resize', resize);
+    }
+
+    function scrollCheck() {
+        // if(document.body.scrollTop > height) animateHeader = false;
+        // else animateHeader = true;
+        animateHeader = true;
+    }
+
+    function resize() {
+        initHeader();
+    }
+
+    function animate() {
+        if(animateHeader) {
+            ctx.clearRect(0,0,width,height);
+
+            ctx.beginPath();
+            // ctx.arc(cursorX, cursorY, 3, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(67,124,144,255)';
+            ctx.fill();
+
+            for(var i in points) {
+                var p = points[i];
+                if(p.count > 0 && !withinBounds(p)) {
+                    points[i].move();
+                    // points[i] = new Dot(p.x1 +.1 * Math.cos(p.theta), p.y1 +.1 * Math.sin(p.theta), p.theta, p.count - 1);
+                }
+                else {
+                    while(withinBounds(points[i])) {
+                        points[i] = new Dot(Math.random() * width, Math.random() * height, Math.random() * 360,
+                            Math.random() * 1000 + 1000);
+                    }
+                }
+            }
+
+            for(var i in points) {
+                points[i].draw(points);
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    function withinBounds(dot) {
+        var splashRect = document.getElementById('splash-text').getBoundingClientRect();
+        var x = dot.x1;
+        var y = dot.y1;
+        if(x >= splashRect.left && x <= splashRect.right && y >= splashRect.top && y <= splashRect.bottom) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Canvas manipulation
+    function Dot(x1, y1, theta, count) {
+        var _this = this;
+
+        // constructor
+        (function() {
+            _this.x1 = x1;
+            _this.y1 = y1;
+            _this.theta = theta;
+            _this.count = count;
+            //_this.lines = [];
+        })();
+
+        this.draw = function(points) {
+
+            for(var i = 0; i < points.length; i++)
+            {
+                var tx = points[i].x1;
+                var ty = points[i].y1;
+
+                var dist = Math.sqrt((x1 - tx) * (x1 - tx) + (y1 - ty) * (y1 - ty));
+                if(dist < 200) {
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(tx, ty);
+                    ctx.strokeStyle = 'rgba(67,124,144,255)';
+                    ctx.stroke();
+                }
+            }
+
+            ctx.beginPath();
+            // ctx.arc(x1, y1, 3, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(67,124,144,255)';
+            ctx.fill();
+
+            if(Math.sqrt((x1 - cursorX) * (x1 - cursorX) + (y1 - cursorY) * (y1 - cursorY)) < 200) {
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(cursorX, cursorY);
+                ctx.strokeStyle = 'rgba(67,124,144,255)';
+                ctx.stroke();
+            }
+        };
+
+        this.move = function () {
+            _this.x1 += .1 * Math.cos(_this.theta);
+            _this.y1 += .1 * Math.sin(_this.theta);
+            _this.count--;
+        }
+    }
+
+    document.onmousemove = function(e){
+        cursorX = e.pageX;
+        cursorY = e.pageY;
+    }
+
+})();

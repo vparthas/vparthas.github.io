@@ -1,1 +1,23 @@
-$(document).ready(function(){$(window).on("resize",function(){$("#aboutDiv").height()<$(window).height()&&($("#aboutDiv").height($(window).height()-$("#navBar").height()),$("#contentDiv").css("padding-bottom","0"))}).trigger("resize"),$("#projectsLink").click(function(){$("html, body").animate({scrollTop:$("#projectsDiv").offset().top-$("#navBar").height()},1e3)}),$("#aboutLink").click(function(){$("html, body").animate({scrollTop:$("#aboutDiv").offset().top-$("#navBar").height()},1e3)}),$(window).scroll(function(){var o=$(window).scrollTop(),t=$("#contentTop").offset().top-$("#navBar").height();o>t?$("#navBar").css("background-color","#437c90"):$("#navBar").css("background-color","transparent")})});
+$(document).ready(function() {
+
+    $(window).on("load", function () {
+
+        $(window).scroll(function () {
+            var scrollTop = $("#scroll-container").offset().top;
+
+            $(".splash").each(function () {
+                var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+                if (objectBottom < scrollTop) {
+                    if ($(this).css("opacity") == 0)
+                        $(this).fadeTo(500, 1);
+                }
+                else {
+                    if ($(this).css("opacity") == 1)
+                        $(this).fadeTo(300, 0);
+                }
+            });
+        }).scroll();
+    });
+
+});

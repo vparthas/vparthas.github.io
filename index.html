@@ -1,114 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Varun Parthasarathy's Portfolio</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Saira+Condensed" rel="stylesheet">
+
+    <!--Devicons-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+    <!--Stylesheets-->
     <link href="css/index.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <link rel="stylesheet" href="stylesheets/animate.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
-<div id="navBar" class="pure-menu pure-menu-horizontal pure-menu-fixed animated fadeInRight">
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item pure-menu-selected"><a id="projectsLink" class="pure-menu-link">Projects</a></li>
-        <li class="pure-menu-item pure-menu-selected"><a id="aboutLink" class="pure-menu-link">About</a></li>
-        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-            <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
-            <ul class="pure-menu-children">
-                <li class="pure-menu-item"><a href="https://www.linkedin.com/in/vparthas" target = "_blank"
-                                              class="pure-menu-link">LinkedIn</a></li>
-                <li class="pure-menu-item"><a href="mailto:varun@parthasarathy.org"
-                                              class="pure-menu-link">Email</a></li>
-                <li class="pure-menu-item"><a href="https://github.com/vparthas" target = "_blank"
-                                              class="pure-menu-link">GitHub</a></li>
+    <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">varunp.com</a>-->
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a id="about-link">About</a></li>
+                <li><a id="projects-link">Projects</a> </li>
+                <li><a href="res/Varun_Parthasarathy_Resume.pdf" target="_blank">Resume</a></li>
             </ul>
-        </li>
-        <li class="pure-menu-item pure-menu-selected">
-            <a href="img/pdf/Varun_Parthasarathy_Resume.pdf" target = "_blank" class="pure-menu-link">R&#233;sum&#233;</a>
-        </li>
-    </ul>
-</div>
-
-<div class="splash-container">
-    <div class="splash">
-        <p class="animated fadeInLeft" id="mainHeading">Hi. I'm Varun Parthasarathy.</p>
-        <p class="animated fadeInRight" id="subHeading">I write code.</p>
-    </div>
-    <canvas id="demo-canvas"></canvas>
-</div>
-
-<div class="content-wrapper" id="contentTop">
-
-    <div id="contentDiv" class="content pure-g">
-
-        <div class="pure-u-1-1" id="projectsDiv">
-            <h1>Projects</h1>
         </div>
 
-        <div class="pure-img">
+    </nav>
 
-            <a href="https://github.com/vparthas/LockPad" target="_blank">
-                <img class="projectImage" src="img/projects/lockpad.png" alt="LockPad"/>
-            </a>
+    <div class="splash-container">
+        <div class="splash" id="splash-text">
+            <p class="animated fadeInLeft" id="mainHeading">VARUN PARTHASARATHY</p>
+            <p class="animated fadeInRight" id="subHeading">
+                <a href="https://www.linkedin.com/in/vparthas" title="LinkedIn" target="_blank">
+                    <svg class="sm-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg>
+                </a>
+                <a href="mailto:varun@parthasarathy.org" title="varun@parthasarathy.org">
+                    <svg class="sm-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M16 3v10c0 .567-.433 1-1 1h-1V4.925L8 9.233 2 4.925V14H1c-.567 0-1-.433-1-1V3c0-.283.108-.533.287-.712C.467 2.107.718 2 1 2h.333L8 6.833 14.667 2H15c.283 0 .533.108.713.288.179.179.287.429.287.712z" fill-rule="evenodd"/></svg>
+                </a>
+                <a href="https://github.com/vparthas" title="Github" target="_blank">
+                    <svg class="sm-icon" aria-labelledby="title" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><title>GitHub</title>
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
 
+                        <defs>
+                            <linearGradient id="gradient">
+                                <stop offset="5%" stop-color="#437c90" />
+                                <stop offset="95%" stop-color="#44BBA4" />
+                            </linearGradient>
+
+                            <linearGradient id="gradient2">
+                                <stop offset="5%" stop-color="#437c90" />
+                                <stop offset="95%" stop-color="#FFFFFF" />
+                            </linearGradient>
+
+                            <filter id="blur-filter" x="-2" y="-2" width="200" height="200">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </a>
+            </p>
         </div>
-
-        <div class="pure-img">
-
-            <a href="https://github.com/vparthas/Scientific-Calculator" target="_blank">
-                <img class="projectImage" src="img/projects/scicalc2.png" alt="Scientific Calculator"/>
-            </a>
-
-        </div>
-
-        <div class="pure-img">
-
-            <a href="https://github.com/vparthas/Snake" target="_blank">
-                <img class="projectImage" src="img/projects/snake.png" alt=".NET Snake"/>
-            </a>
-
-        </div>
-
-        <div class="pure-img">
-
-            <a href="https://github.com/vparthas/Portfolio-Website" target="_blank">
-                <img class="projectImage" src="img/projects/varunpcom2.png" alt="varunp.com source"/>
-            </a>
-
-        </div>
-
-        <div class="pure-img">
-
-            <a href="http://illinideltasigs.org/" target="_blank">
-                <img class="projectImage" src="img/projects/dsp.png" alt="illinideltasigs.org"/>
-            </a>
-
-        </div>
-
-        <div class="pure-u-1-1 spacer" ></div>
-
-        <div class="pure-u-1-1" id="aboutDiv">
-
-            <h1>About Me</h1>
-
-            <img src="img/about_cropped.png" id="aboutImage" alt="Me">
-
-            <p><strong>Hey there!</strong> I am currently a student at the University of Illinois at Urbana-Champaign pursuing my B.S. in Computer Science & Statistics. I grew up (and still reside) in the heart of California’s Silicon Valley, where I took an interest in computer science from a young age. I have always been able to quickly adapt to new challenges, and I love creating innovative solutions to problems. In addition, I am always interested in new and interesting technologies, and I believe change to be essential to innovation. I am currently seeking an internship for the summer of 2017 in order to further my learning. Please feel free to contact me with any opportunities.</p>
-        </div>
-
+        <canvas id="demo-canvas"></canvas>
     </div>
 
-</div>
+    <div id="scroll-container">
 
+        <div id="about-container" class="scroll-section">
 
-<script src="js/rAF.js"></script>
-<script src="js/header.js"></script>
+            <p><h1 class="section-header">About Me</h1></p>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="js/scroll.js"></script>
+            <div class="masonry-grid" data-masonry='{ "itemSelector": ".masonry-item"}'>
+
+                <div class="masonry-item" id="school-info">
+                    <!--<img src="res/img/uiuc.png">-->
+                    <div id="bigtext">
+                        <p>University of Illinois Urbana-Champaign</p>
+                        <p>B.S. Statistics & Computer Science (May 2019)</p>
+                    </div>
+                </div>
+
+                <div class="masonry-item" id="coursework-section">
+                    <p><strong>Relevant Coursework:</strong></p>
+
+                    <span class="course-item">Systems Programming</span> |
+                    <span class="course-item">Computer Architecture</span> |
+                    <span class="course-item">Data Structures</span> |
+                    <span class="course-item">Discrete Structures</span> |
+                    <span class="course-item">Applied Linear Algebra</span> |
+                    <span class="course-item">Statistical Analysis</span> |
+                    <span class="course-item">Statistics & Probability I</span> |
+                    <span class="course-item">User Interface Design</span> |
+                    <span class="course-item">Data Mining (Currently Enrolled)</span> |
+                    <span class="course-item">Statistics & Probability II (Currently Enrolled)</span> |
+                    <span class="course-item">Numerical Methods (Currently Enrolled)</span> |
+                    <span class="course-item">Fundamental Mathematics (Currently Enrolled)</span>
+                </div>
+
+                <div class="masonry-item" id="workexp-section">
+                    <p><strong>Work experience:</strong></p>
+
+                    <section>
+                        <a href="http://www.arubanetworks.com/" target="_blank"><img src="res/img/aruba.png" alt="HPE Aruba Networks"></a>
+                        <a href="https://chatgrid.io/" target="_blank"><img src="res/img/chatgrid.png" alt="ChatGrid"></a>
+                        <a href="https://www.mobileiron.com/" target="_blank"><img src="res/img/mobileiron.png" alt="MobileIron"></a>
+                    </section>
+                </div>
+
+                <div class="masonry-item" id="skills-section">
+                    <p>
+                        <strong>Skills:</strong>
+
+                        <i class="devicon-java-plain"></i>
+                        <i class="devicon-c-plain"></i>
+                        <i class="devicon-cplusplus-plain"></i>
+                        <i class="devicon-python-plain"></i>
+                        <i class="devicon-csharp-plain"></i>
+                        <i class="devicon-javascript-plain"></i>
+                        <i class="devicon-typescript-plain"></i>
+                        <i class="devicon-html5-plain"></i>
+                        <i class="devicon-css3-plain"></i>
+                        <i class="devicon-git-plain"></i>
+                        <i class="devicon-android-plain"></i>
+                        <i class="devicon-linux-plain"></i>
+                        <i class="devicon-windows8-original"></i>
+                        <i class="devicon-nodejs-plain"></i>
+                        <i class="devicon-intellij-plain"></i>
+                        <i class="devicon-visualstudio-plain"></i>
+                        <i class="devicon-vim-plain"></i>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="projects-container" class="scroll-section">
+
+            <p><h1 class="section-header">Projects</h1></p>
+
+            <div class="masonry-grid" data-masonry='{ "itemSelector": ".masonry-item"}'>
+
+                <div class="masonry-item project-card">
+                    <h1>LockPad</h1>
+                    <p>Fully-featured encrypted notepad Android application. Features include full AES 256-bit encryption, support for directories, text, and images, auto-saving, an intuitive material design user interface, and password recovery.</p>
+                    <a href="https://github.com/vparthas/LockPad" target="_blank">Project page</a>
+                </div>
+
+                <div class="masonry-item project-card">
+                    <h1>PageRank Crawler</h1>
+                    <p>Python program that crawls webpages, and then ranks them by importance using the PageRank algorithm. Includes HTML crawling/parsing, page mapping, and ranking functionality</p>
+                    <a href="https://github.com/vparthas/pagerank-crawler" target="_blank">Project page</a>
+                </div>
+
+                <div class="masonry-item project-card">
+                    <h1>.NET Snake</h1>
+                    <p>Simple snake game written in C#. Includes scaling difficulty and score tracking.</p>
+                    <a href="https://github.com/vparthas/Snake" target="_blank">Project page</a>
+                </div>
+
+                <div class="masonry-item project-card">
+                    <h1>Scientific Calculator</h1>
+                    <p>Basic console java application for processing and calculating mathematical expressions. Supports common mathematical functions and custom variable declaration.</p>
+                    <a href="https://github.com/vparthas/Scientific-Calculator" target="_blank">Project page</a>
+                </div>
+
+                <div class="masonry-item project-card">
+                    <h1>varunp.com</h1>
+                    <p>Project files for this site, including the implementation of the randomly-generated background animation.</p>
+                    <a href="https://github.com/vparthas/vparthas.github.io" target="_blank">Project page</a>
+                </div>
+
+                <div class="masonry-item project-card">
+                    <h1>illinideltasigs.org</h1>
+                    <p>Project files for the official website of the Alpha Alpha chapter of Delta Sigma Phi at the University of Illinois Urbana-Champaign.</p>
+                    <a href="https://github.com/vparthas/DSP_new" target="_blank">Project page</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <script src="js/rAF.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/click.js"></script>
+
+    <script src="js/bigtext.js"></script>
 
 </body>
 </html>
