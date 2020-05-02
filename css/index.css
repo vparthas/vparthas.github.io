@@ -141,6 +141,13 @@
     /*min-height: 100vh;*/
 }
 
+#about-container span {
+    text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14pt;
+    color: whitesmoke;
+}
+
 #about-container h1 {
     /*text-align: right;*/
 }
