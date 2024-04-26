@@ -27,8 +27,8 @@
         for(var i = 0; i < dots; i++) {
             var l;
             do {
-                l = new Dot(Math.random()*width, Math.random() * height, Math.random() * 360, Math.random() * 10000 + 1000);
-            } while(withinBounds(l));
+                l = new Dot(Math.random() * width, Math.random() * height, Math.random() * 360, Math.random() * 10000 + 1000);
+            } while(coordinatesValid(l));
 
             points.push(l);
         }
@@ -65,15 +65,15 @@
 
             for(var i in points) {
                 var p = points[i];
-                if(p.count > 0 && !withinBounds(p)) {
+                if(p.count > 0 && !coordinatesValid(p)) {
                     points[i].move();
                     // points[i] = new Dot(p.x1 +.1 * Math.cos(p.theta), p.y1 +.1 * Math.sin(p.theta), p.theta, p.count - 1);
                 }
                 else {
-                    while(withinBounds(points[i])) {
+                    do {
                         points[i] = new Dot(Math.random() * width, Math.random() * height, Math.random() * 360,
                             Math.random() * 1000 + 1000);
-                    }
+                    } while(coordinatesValid(points[i]));
                 }
             }
 
@@ -84,11 +84,13 @@
         requestAnimationFrame(animate);
     }
 
-    function withinBounds(dot) {
+    function coordinatesValid(dot) {
         var splashRect = document.getElementById('splash-text').getBoundingClientRect();
         var x = dot.x1;
         var y = dot.y1;
         if(x >= splashRect.left && x <= splashRect.right && y >= splashRect.top && y <= splashRect.bottom) {
+            return true;
+        } else if(x < 0 || x > width || y < 0 || y > height) {
             return true;
         } else {
             return false;
@@ -109,7 +111,6 @@
         })();
 
         this.draw = function(points) {
-
             for(var i = 0; i < points.length; i++)
             {
                 var tx = points[i].x1;
@@ -126,7 +127,7 @@
             }
 
             ctx.beginPath();
-            // ctx.arc(x1, y1, 3, 0, 2 * Math.PI, false);
+            ctx.arc(x1, y1, 1, 0, 2 * Math.PI, false);
             ctx.fillStyle = 'rgba(67,124,144,255)';
             ctx.fill();
 
@@ -140,8 +141,8 @@
         };
 
         this.move = function () {
-            _this.x1 += .1 * Math.cos(_this.theta);
-            _this.y1 += .1 * Math.sin(_this.theta);
+            _this.x1 += .075 * Math.cos(_this.theta);
+            _this.y1 += .075 * Math.sin(_this.theta);
             _this.count--;
         }
     }
